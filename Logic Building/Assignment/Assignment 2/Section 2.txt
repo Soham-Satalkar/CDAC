@@ -1,0 +1,177 @@
+Section 2
+
+Question 1
+Solution:
+
+class Grade{
+	public static void main(String args[]){
+		int score = 89;
+		if(score>90){
+			System.out.println("A");
+		}else if(score>=80 && score<=89){
+			System.out.println("B");
+		}else if(score>=70 && score<=79){
+			System.out.println("C");
+		}else if(score>=60 && score<=69){
+			System.out.println("D");
+		}else{
+			System.out.println("F");
+		}
+	}
+}
+
+
+Question 2
+Solution:
+
+class Day{
+	public static void main(String args[]){
+		int day = 4;
+		switch(day){
+			case 1:
+				System.out.println("Monday");
+				switch("weekday"){
+					case "weekday":
+					System.out.println("Weekday");
+					break;
+				}
+			break;
+			
+			case 2:
+				System.out.println("Tuesday");
+				switch("weekday"){
+					case "weekday":
+					System.out.println("Weekday");
+					break;
+				}
+			break;
+			
+			case 3:
+				System.out.println("Wednesday");
+				switch("weekday"){
+					case "weekday":
+					System.out.println("Weekday");
+					break;
+				}
+			break;
+			
+			case 4:
+				System.out.println("Thursday");
+				switch("weekday"){
+					case "weekday":
+					System.out.println("Weekday");
+					break;
+				}
+			break;
+			
+			case 5:
+				System.out.println("Friday");
+				switch("weekday"){
+					case "weekday":
+					System.out.println("Weekday");
+					break;
+				}
+			break;
+			
+			case 6:
+				System.out.println("Saturday");
+				switch("weekend"){
+					case "weekend":
+					System.out.println("Weekend");
+					break;
+				}
+			break;
+			
+			case 7:
+				System.out.println("Sunday");
+				switch("weekend"){
+					case "weekend":
+					System.out.println("Weekend");
+					break;
+				}
+			break;
+			
+			default:
+				System.out.println("Invalid");
+			break;	
+		}
+	}
+}
+
+Question 3
+Solution: 
+class Calc{
+	public static void main(String args[]){
+		int a,b;
+		a = 20;
+		b = 10;
+		char op = '/';
+		switch(op){
+			case '+':
+			System.out.println(a+b);
+			break;
+			case '-':
+			System.out.println(a-b);
+			break;
+			case '/':
+			if(b!=0){
+			System.out.println(a/b);	
+			}else{
+System.out.println("Error: Division by zero is not allowed.");
+			}
+			break;
+			case '*':
+			System.out.println(a*b);
+			break;
+			default:
+			System.out.println("Invalid expression");
+			break;
+		}
+	}
+}
+
+Question 4
+Solution:
+
+public class Discount{
+	public static void main(String args[]){
+		double discount;
+		double price=666.0;
+		boolean mem = true;
+		if(price>=1000){
+			discount = 20.0;
+		}
+		else if (price >=500 && price<=999){
+			discount = 10.0;
+		}
+		else{
+			discount = 5.0;
+		}
+		if(mem){
+			discount +=5.0;  
+		}
+		
+		double finalPrice = price - (price*(discount/100));
+		
+		System.out.println(finalPrice);
+	}
+}
+
+Question 5
+Solution:
+
+public class StudentPassFail{
+	public static void main(String args[]){
+		int a=50;
+		int b=6;
+		int c=45;
+		
+		if(a>=40 && b>=40 && c>=40){
+			System.out.println("Passes");
+		}
+		else{
+			System.out.println("Fails");
+		}
+	}
+}
+
