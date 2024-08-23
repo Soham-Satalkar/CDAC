@@ -1,0 +1,253 @@
+Section-1
+
+Snippet 1:
+public class InfiniteForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 10; i--) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+Error: According to the given condition i will be always smaller than 10 and i is decremented in the loop therefore it can be adjusted by incrementing the value of i.
+Corrected:
+public class InfiniteForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 10; i++) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+Snippet 2:
+public class IncorrectWhileCondition { 
+    public static void main(String[] args) { 
+        int count = 5; 
+        while (count = 0) { 
+            System.out.println(count); 
+            count--; 
+        } 
+    }
+}
+Error: Compile Time Error: incompatible types: int cannot be converted to Boolean
+Here in while loop (count=0) will never be executed as count = 5; therefore we can give while condition as (count>0) so that the loop will execute until the count value becomes 0 and then it will stop executing.
+Corrected:
+public class IncorrectWhileCondition { 
+    public static void main(String[] args) { 
+        int count = 5; 
+        while (count > 0) { 
+            System.out.println(count); 
+			count--;
+        }
+    }
+}
+
+Snippet 3:
+public class DoWhileIncorrectCondition { 
+    public static void main(String[] args) { 
+        int num = 0; 
+        do { 
+            System.out.println(num); 
+            num++; 
+        } while (num > 0); 
+    } 
+}
+Error: In my system the loop is running infinitely as the while condition (num>0) is always true
+Therefore, if we change the condition to (num<100) then the loop will run in controlled way.
+Corrected:
+public class DoWhileIncorrectCondition { 
+    public static void main(String[] args) { 
+        int num = 0; 
+        do { 
+            System.out.println(num); 
+            num++; 
+        } while (num < 100); 
+    } 
+}
+
+Snippet 4:
+public class OffByOneErrorForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 1; i <= 10; i++) { 
+            System.out.println(i); 
+        } 
+        // Expected: 10 iterations with numbers 1 to 10 
+        // Actual: Prints numbers 1 to 10, but the task expected only 1 to 9 
+    } 
+}
+
+Here the condition (i<=10) will print the value 10 as well so we have to give condition as (i<10) or (i<=9) to print the value from 1 to 9.
+
+Corrected:
+public class OffByOneErrorForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 1; i < 10; i++) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+Snippet 5:
+public class WrongInitializationForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 10; i >= 0; i++) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+Here as per the condition the loop will run infinitely 
+Corrected:
+public class WrongInitializationForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 10; i >= 0; i--) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+Snippet 6:
+public class MisplacedForLoopBody { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) 
+            System.out.println(i); 
+            System.out.println("Done"); 
+    } 
+}
+Error: Only the first statement immediately following the loop declaration is considered part of the loop body.
+Braces “{ }” should be used to execute both the statement. 
+Corrected: 
+public class MisplacedForLoopBody { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++){
+            System.out.println(i); 
+            System.out.println("Done");
+		}
+    } 
+}
+
+Snippet 7:
+class UninitializedWhileLoop { 
+    public static void main(String[] args) { 
+        int count; 
+        while (count < 10) { 
+            System.out.println(count); 
+            count++; 
+        } 
+    } 
+} 
+Error: variable count might not have been initialized. This error is due to count is not initialized.
+Corrected:
+public class UninitializedWhileLoop { 
+    public static void main(String[] args) { 
+        int count=0; 
+        while (count < 10) { 
+            System.out.println(count); 
+            count++; 
+        } 
+    } 
+}
+
+Snippet 8:
+public class OffByOneDoWhileLoop { 
+    public static void main(String[] args) { 
+        int num = 1; 
+        do { 
+            System.out.println(num); 
+            num--; 
+        } while (num > 0); 
+    } 
+}
+Error:
+Corrected:
+public class OffByOneDoWhileLoop { 
+    public static void main(String[] args) { 
+        int num = 1; 
+        do { 
+            System.out.println(num); 
+            num++; 
+        } while (num <= 5); 
+    } 
+}
+
+Snippet 9:
+public class InfiniteForLoopUpdate { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i += 2) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+Error:  As (i+=2) it skips 1 and 3 so to print numbers from 1 to 4 we must give condition (i+=1).
+Corrected:
+public class InfiniteForLoopUpdate { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i += 1) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+Snippet 10:
+public class IncorrectWhileLoopControl { 
+    public static void main(String[] args) { 
+        int num = 10; 
+        while (num = 10) { 
+            System.out.println(num); 
+            num--; 
+        } 
+    } 
+}
+Error: Compile Time Error: incompatible types: int cannot be converted to boolean
+Corrected:
+public class IncorrectWhileLoopControl { 
+    public static void main(String[] args) { 
+        int num = 10; 
+        while (num >= 0) { 
+            System.out.println(num); 
+            num--; 
+        } 
+    } 
+}
+
+Snippet 11:
+public class IncorrectLoopUpdate { 
+    public static void main(String[] args) { 
+        int i = 0; 
+        while (i < 5) { 
+            System.out.println(i); 
+            i += 2; // Error: This may cause unexpected results in output 
+        } 
+    } 
+} 
+Error:
+Corrected:
+public class IncorrectLoopUpdate { 
+    public static void main(String[] args) { 
+        int i = 0; 
+        while (i < 5) { 
+            System.out.println(i); 
+            i += 1;  
+        } 
+    } 
+}
+
+Snippet 12:
+public class LoopVariableScope { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) { 
+            int x = i * 2; 
+        } 
+        System.out.println(x); // Error: 'x' is not accessible here 
+    } 
+}
+Error: Compile Time Error: cannot find symbol. The integer x is declared and initialised inside for loop therefore cannot be accessed. That is why we must use print statement inside for loop.
+Corrected:
+
+public class LoopVariableScope { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) { 
+            int x = i * 2; 
+			System.out.println(x);
+        }   
+    } 
+}
