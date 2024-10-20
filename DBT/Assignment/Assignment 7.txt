@@ -1,0 +1,68 @@
+1. Write a query that counts all orders for October 3.
+-> select count(odate) from orders
+   where odate = '1990-10-03';
+  +--------------+
+  | count(odate) |
+  +--------------+
+  |            5 |
+  +--------------+
+
+2. Write a query that counts the number of different non-NULL city values in the Customers table.
+-> select count(*) from customers
+   where city is not null;
+  +----------+
+  | count(*) |
+  +----------+
+  |        7 |
+  +----------+
+
+3. Write a query that selects each customer’s smallest order.
+-> select min(amt) ,cnum from orders
+   group by cnum;
+  +----------+------+
+  | min(amt) | cnum |
+  +----------+------+
+  |    18.69 | 2008 |
+  |   767.19 | 2001 |
+  |  1900.10 | 2007 |
+  |  5160.45 | 2003 |
+  |  1713.23 | 2002 |
+  |    75.75 | 2004 |
+  |  4723.00 | 2006 |
+  +----------+------+
+
+4. Write a query that selects the first customer, in alphabetical order, whose name begins 
+   with G.
+-> select * from customers
+   where cname like 'G%';
+  +------+----------+--------+--------+------+
+  | Cnum | Cname    | City   | Rating | Snum |
+  +------+----------+--------+--------+------+
+  | 2002 | Giovanni | Rome   |    200 | 1003 |
+  | 2004 | Grass    | Berlin |    300 | 1002 |
+  +------+----------+--------+--------+------+
+
+5. Write a query that selects the highest rating in each city.
+-> select max(rating) "Highest Rating",city from customers
+   group by city;
+  +----------------+----------+
+  | Highest Rating | city     |
+  +----------------+----------+
+  |            100 | London   |
+  |            200 | Rome     |
+  |            300 | San Jose |
+  |            300 | Berlin   |
+  +----------------+----------+
+
+6. Write a query that counts the number of salespeople registering orders for each day.
+   (If a salesperson has more than one order on a given day, he or she should be counted only once.).
+-> select count(distinct snum) "Num of Salespeople", odate from orders
+   group by odate;
+  +--------------------+------------+
+  | Num of Salespeople | odate      |
+  +--------------------+------------+
+  |                  4 | 1990-10-03 |
+  |                  2 | 1990-10-04 |
+  |                  1 | 1990-10-05 |
+  |                  2 | 1990-10-06 |
+  +--------------------+------------+
