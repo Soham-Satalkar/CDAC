@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+    <style>
+
+        b{
+            color: white;
+        }
+
+        .highlight{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="content">
+        <b>WE</b> have just started <b>THIS</b> section the user(Beginner to intermediate) who <b>WANT</b> to word with <b>VARIOUS</b> javscript <b>PROBLEMS</b> 
+        and write scripts online to <b>TEST</b> their javscript <b>SKILL</b>.
+    </p>
+
+    <a href="#" id="hoverlink">Mouse over here</a>
+
+    <script>
+        const hover= document.getElementById("hoverlink");
+        const boldWords=document.querySelectorAll("#content b");
+
+        function highlightWords(){
+            boldWords.forEach(word=>{
+                word.classList.add("highlight");
+            }
+            );
+        }
+
+        function removeHighlight(){
+            boldWords.forEach(word=>{
+            word.classList.remove("highlight")
+            });
+        }
+
+        hover.addEventListener("mouseover", highlightWords);
+        hover.addEventListener("mouseout", removeHighlight);
+
+    </script>
+</body>
+</html>
