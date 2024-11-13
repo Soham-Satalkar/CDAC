@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.header, .section {
+    margin-bottom: 20px;
+}
+
+.heading {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div1, .div2 {
+    width: 45%;
+}
+
+p, ul {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
